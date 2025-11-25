@@ -1,0 +1,113 @@
+/* Wrapper */
+.float-wrapper {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 3000;
+}
+
+/* MAIN BUTTON */
+.float-btn {
+  width: 65px;
+  height: 65px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0ae68c, #009245);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 255, 130, 0.35);
+  backdrop-filter: blur(8px);
+  transition: 0.3s ease;
+  animation: float 3s infinite ease-in-out;
+}
+
+.float-btn:hover {
+  transform: scale(1.12);
+}
+
+.float-btn.open {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* MENU LIST */
+.float-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.float-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* BUTTON STYLES */
+.float-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 18px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transition: 0.3s ease;
+}
+
+.float-item:hover {
+  transform: translateX(8px) scale(1.05);
+}
+
+/* Individual item colors */
+.float-item.call {
+  background: linear-gradient(135deg, #0aa8ff, #0056d0);
+}
+
+.float-item.whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+/* Icons */
+.float-item svg {
+  font-size: 20px;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* 📱 MOBILE OPTIMIZATION */
+@media (max-width: 480px) {
+  .float-btn {
+    width: 58px;
+    height: 58px;
+    font-size: 26px;
+  }
+
+  .float-item {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .float-wrapper {
+    bottom: 20px;
+    left: 20px;
+  }
+}

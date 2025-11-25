@@ -1,0 +1,668 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ultra-realistic water effects */
+@keyframes waterWave {
+  0%, 100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(5px) translateY(-3px) rotate(1deg);
+  }
+  50% {
+    transform: translateX(-5px) translateY(3px) rotate(-1deg);
+  }
+  75% {
+    transform: translateX(3px) translateY(-2px) rotate(0.5deg);
+  }
+}
+
+@keyframes waterRipple {
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes waterFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes waterShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) translateX(50px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes waterReflection {
+  0%, 100% {
+    transform: translateY(0) skewY(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-10px) skewY(2deg);
+    opacity: 0.5;
+  }
+}
+
+/* Water wave background */
+.water-wave-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.water-wave-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(37, 99, 235, 0.15) 25%,
+    rgba(59, 130, 246, 0.1) 50%,
+    rgba(37, 99, 235, 0.15) 75%,
+    rgba(59, 130, 246, 0.1) 100%
+  );
+  background-size: 200% 200%;
+  animation: waterFlow 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* Water ripple effect on hover */
+.water-ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.water-ripple-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s, opacity 0.6s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.water-ripple-effect:hover::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+}
+
+/* Water shimmer effect */
+.water-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.water-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: waterShimmer 3s infinite;
+  z-index: 1;
+}
+
+/* Floating water bubbles */
+.water-bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.water-bubble {
+  position: absolute;
+  bottom: -50px;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(59, 130, 246, 0.3) 100%);
+  border-radius: 50%;
+  animation: bubbleFloat 8s infinite ease-in-out;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.water-bubble:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 10s;
+}
+
+.water-bubble:nth-child(2) {
+  left: 30%;
+  animation-delay: 2s;
+  animation-duration: 12s;
+  width: 15px;
+  height: 15px;
+}
+
+.water-bubble:nth-child(3) {
+  left: 50%;
+  animation-delay: 4s;
+  animation-duration: 9s;
+  width: 25px;
+  height: 25px;
+}
+
+.water-bubble:nth-child(4) {
+  left: 70%;
+  animation-delay: 1s;
+  animation-duration: 11s;
+  width: 18px;
+  height: 18px;
+}
+
+.water-bubble:nth-child(5) {
+  left: 90%;
+  animation-delay: 3s;
+  animation-duration: 13s;
+  width: 22px;
+  height: 22px;
+}
+
+/* Water reflection effect */
+.water-reflection {
+  position: relative;
+}
+
+.water-reflection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(37, 99, 235, 0.2) 100%
+  );
+  transform-origin: bottom;
+  animation: waterReflection 4s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Animated water droplets */
+@keyframes waterDrop {
+  0% {
+    transform: translateY(-10px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px) scale(1);
+    opacity: 0;
+  }
+}
+
+.water-droplet {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, rgba(37, 99, 235, 0.4) 100%);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  animation: waterDrop 3s infinite;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+}
+
+/* Water surface animation */
+.water-surface {
+  position: relative;
+  overflow: hidden;
+}
+
+.water-surface::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(59, 130, 246, 0.03) 2px,
+      rgba(59, 130, 246, 0.03) 4px
+    );
+  animation: waterWave 10s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Enhanced button water ripple */
+button.water-ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+button.water-ripple-effect::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s, opacity 0.6s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+button.water-ripple-effect:active::before {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+  transition: width 0s, height 0s, opacity 0.6s;
+}
+
+/* 3D Scene Styling */
+canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* 3D Water Droplets Glow */
+@keyframes dropletGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.8));
+  }
+}
+
+/* 3D Pump Glow */
+@keyframes pumpGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(37, 99, 235, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(37, 99, 235, 0.9));
+  }
+}
+
+/* Gallery Image Hover Effect */
+.gallery-item {
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+/* 3D Tractor Container */
+.tractor-3d-container {
+  position: relative;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Modal Animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  animation: modalFadeIn 0.3s ease-in-out;
+}
+
+/* Water droplet effect on cards */
+.water-droplet-container {
+  position: relative;
+}
+
+.water-droplet-container::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 20%;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, rgba(37, 99, 235, 0.4) 100%);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  animation: waterDrop 4s infinite;
+  animation-delay: 2s;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+  opacity: 0;
+}
+
+.water-droplet-container:hover::after {
+  opacity: 1;
+  animation: waterDrop 3s infinite;
+}
+
+/* splash screen spinlogo */
+@keyframes spin3D {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.spin-logo {
+  animation: spin3D 4s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* .text-5xl{
+    color: #fca049;
+} */
+
+
+/* sidebar logo spin3D */
+@keyframes spin-3d {
+  0% {
+    transform: rotateY(0deg) ;
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.spin-3d {
+  animation: spin-3d 4s linear infinite; /* smooth, continuous clockwise spin */
+  transform-style: preserve-3d;
+  /* backface-visibility: hidden; */
+  display: block;
+}
+
+/* product css */
+/* product css */
+
+.products-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 20px;
+  color: #fff;
+  text-align: center;
+  /* background: linear-gradient(135deg, #0d0d0d, #1a1a1a); */
+}
+
+.products-title {
+  font-size: 35px;
+  margin-bottom: 40px;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/* Products container grid */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Product card */
+.product-card {
+  background: #ffffff;  /* White background */
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  /* background: linear-gradient(45deg, #4ec3ff, #fcbf49, #ff6b6b, #4ec3ff); */
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  opacity: 0.15;
+  z-index: 0;
+  border-radius: 20px;
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.product-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.7);
+}
+
+/* Product image */
+.product-img {
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img img {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+/* Product info */
+.product-info {
+  padding: 20px;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.product-info h2 {
+  color: rgb(9, 9, 110);
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.desc {
+  color: rgb(46, 45, 45);
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ff8800;
+  margin-bottom: 5px;
+}
+
+.gst {
+  font-size: 12px;
+  color: rgb(46, 45, 45);
+  margin-bottom: 15px;
+}
+
+/* Specs */
+.specs p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: rgb(46, 45, 45);
+
+}
+
+/* Features list */
+.features {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 14px;
+  color: rgb(46, 45, 45);
+
+}
+
+/* Get Quote button */
+.btn-quote {
+  /* background: linear-gradient(90deg, #4ec3ff, #fcbf49); */
+  color: #000;
+  padding: 10px 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-quote:hover {
+  /* background: linear-gradient(90deg, #ff6b6b, #4ec3ff); */
+  transform: scale(1.05);
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .product-img img {
+    height: 180px;
+  }
+
+  .product-info h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+  .product-img img {
+    height: 160px;
+  }
+}
+
+/* FAQ css */
+.faq-card {
+  margin-bottom: 15px;
+
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Answer hidden by default */
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* When card is open show answer */
+.faq-card.open .faq-answer {
+  display: block;
+}
+
+
+
+
