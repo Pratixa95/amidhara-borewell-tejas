@@ -26,7 +26,7 @@ const Contact = () => {
     try {
       // Using Formspree - free form submission service
       // This will send emails directly to your inbox
-      const response = await fetch('https://formspree.io/f/xdkjlkwo', {
+      const response = await fetch('https://formspree.io/f/xzzqqoyp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

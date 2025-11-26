@@ -10,6 +10,7 @@ import SplashScreen from './components/SplashScreen'
 import Logo3DSidebar from './components/Logo3DSidebar'
 import Product from './components/Product'
 import FAQ from './components/FAQ'
+import WhatsappButton from './components/WhatsappButton';
 
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
         </>
       )}
       <Footer onNavigate={handleNavigation} />
+      <WhatsappButton/>
     </div>
   )
 }
