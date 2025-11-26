@@ -83,7 +83,7 @@ const Footer = ({ onNavigate }) => {
             <ul className="space-y-2 text-gray-400">
               <li>+91 91066 04895</li>
               <li>infoamidharaborewell@gmail.com</li>
-              <li>Sahajanand Krupa Society, F/120, Moti Nagar 1, Tarsali, Vadodara, Gujarat 390009</li>
+              <li>Sahajanand Krupa Society, F/120, Tarsali, Vadodara, Gujarat 390009</li>
             </ul>
           </div>
 
