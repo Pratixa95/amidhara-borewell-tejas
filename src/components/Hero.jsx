@@ -1,6 +1,107 @@
+// import React from 'react'
+// import WaterEffects from './WaterEffects'
+// import Scene3D from './Scene3D'
+
+// const Hero = () => {
+//   const scrollToContact = () => {
+//     const element = document.getElementById('contact')
+//     if (element) {
+//       element.scrollIntoView({ behavior: 'smooth' })
+//     }
+//   }
+
+//   return (
+//     <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden water-wave-bg water-surface min-h-screen">
+//       <WaterEffects variant="waves" />
+//       <div className="water-bubbles">
+//         <div className="water-bubble"></div>
+//         <div className="water-bubble"></div>
+//         <div className="water-bubble"></div>
+//         <div className="water-bubble"></div>
+//         <div className="water-bubble"></div>
+//       </div>
+      
+//       {/* 3D Scene - Prominent Display */}
+//       <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 5 }}>
+//         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full md:w-1/2 h-full max-h-[600px] md:max-h-[700px]">
+//           <div className="w-full h-full">
+//             <Scene3D showPump={true} showDroplets={true} />
+//           </div>
+//         </div>
+//       </div>
+      
+//       <div className="container mx-auto px-4 relative z-10">
+//         <div className="max-w-4xl mx-auto text-center md:text-left">
+//           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 relative" style={{ zIndex: 20 }}>
+//             Professional Borewell Services
+//           </h1>
+//           <p className="text-xl text-gray-700 mb-8 relative" style={{ zIndex: 20 }}>
+//             Your trusted partner for reliable water solutions. We provide expert borewell drilling, 
+//             installation, and maintenance services with years of experience.
+//           </p>
+//           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start relative" style={{ zIndex: 20 }}>
+//             <button
+//               onClick={scrollToContact}
+//               className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg water-ripple-effect relative overflow-hidden"
+//             >
+//               Get Free Quote
+//             </button>
+//             <button
+//               onClick={() => {
+//                 const element = document.getElementById('services')
+//                 if (element) element.scrollIntoView({ behavior: 'smooth' })
+//               }}
+//               className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg border-2 border-blue-600 water-ripple-effect relative overflow-hidden"
+//             >
+//               Our Services
+//             </button>
+//           </div>
+//         </div>
+        
+//         {/* Features */}
+//         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto relative" style={{ zIndex: 20 }}>
+//           <div className="bg-white p-6 rounded-lg shadow-md water-ripple-effect water-shimmer relative z-10">
+//             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+//               <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+//               </svg>
+//             </div>
+//             <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Expert Team</h3>
+//             <p className="text-gray-600 text-center">Experienced professionals with years of expertise</p>
+//           </div>
+          
+//           <div className="bg-white p-6 rounded-lg shadow-md water-ripple-effect water-shimmer relative z-10">
+//             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+//               <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+//               </svg>
+//             </div>
+//             <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">24/7 Support</h3>
+//             <p className="text-gray-600 text-center">Round-the-clock service and emergency support</p>
+//           </div>
+          
+//           <div className="bg-white p-6 rounded-lg shadow-md water-ripple-effect water-shimmer relative z-10">
+//             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+//               <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+//               </svg>
+//             </div>
+//             <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Affordable Prices</h3>
+//             <p className="text-gray-600 text-center">Competitive pricing with transparent quotes</p>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+// export default Hero
+
+
 import React from 'react'
 import WaterEffects from './WaterEffects'
 import Scene3D from './Scene3D'
+import Logo3DSidebar from './Logo3DSidebar'
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -20,16 +121,31 @@ const Hero = () => {
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
       </div>
-      
-      {/* 3D Scene - Prominent Display */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 5 }}>
+
+{/* Mobile/Tablet Logo Above Heading */}
+<div className="block lg:hidden mb-6 flex justify-center relative z-20">
+  <div 
+    className="w-32 h-32 floating-3d"
+    style={{ perspective: "1200px" }}
+  >
+    <img
+      src="/logo_tejas.png"
+      alt="Amidhara Borewell Logo"
+      className="w-full h-full object-contain spin-3d"
+    />
+  </div>
+</div>
+
+
+      {/* Desktop 3D Right Side */}
+      <div className="hidden md:block absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 5 }}>
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full md:w-1/2 h-full max-h-[600px] md:max-h-[700px]">
           <div className="w-full h-full">
             <Scene3D showPump={true} showDroplets={true} />
           </div>
         </div>
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center md:text-left">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 relative" style={{ zIndex: 20 }}>
@@ -39,6 +155,7 @@ const Hero = () => {
             Your trusted partner for reliable water solutions. We provide expert borewell drilling, 
             installation, and maintenance services with years of experience.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start relative" style={{ zIndex: 20 }}>
             <button
               onClick={scrollToContact}
@@ -57,7 +174,7 @@ const Hero = () => {
             </button>
           </div>
         </div>
-        
+
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto relative" style={{ zIndex: 20 }}>
           <div className="bg-white p-6 rounded-lg shadow-md water-ripple-effect water-shimmer relative z-10">
@@ -69,7 +186,7 @@ const Hero = () => {
             <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Expert Team</h3>
             <p className="text-gray-600 text-center">Experienced professionals with years of expertise</p>
           </div>
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md water-ripple-effect water-shimmer relative z-10">
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
               <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +196,7 @@ const Hero = () => {
             <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">24/7 Support</h3>
             <p className="text-gray-600 text-center">Round-the-clock service and emergency support</p>
           </div>
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md water-ripple-effect water-shimmer relative z-10">
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
               <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,4 +213,3 @@ const Hero = () => {
 }
 
 export default Hero
-
