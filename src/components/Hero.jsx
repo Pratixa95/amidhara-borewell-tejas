@@ -102,6 +102,7 @@ import React from 'react'
 import WaterEffects from './WaterEffects'
 import Scene3D from './Scene3D'
 import Logo3DSidebar from './Logo3DSidebar'
+import logo from '/logo_tejas.png';
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -129,7 +130,7 @@ const Hero = () => {
     style={{ perspective: "1200px" }}
   >
     <img
-      src="/logo_tejas.png"
+      src={logo}
       alt="Amidhara Borewell Logo"
       className="w-full h-full object-contain spin-3d"
     />
