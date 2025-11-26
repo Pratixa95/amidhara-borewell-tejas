@@ -99,21 +99,21 @@ const Footer = ({ onNavigate }) => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>+91 98765 43210</li>
-              <li>info@amidharaborewell.com</li>
-              <li>123 Main Street, City</li>
-              <li>State - 123456, India</li>
+              <li>+91 91066 04895</li>
+              <li>infoamidharaborewell@gmail.com</li>
+              <li>Sahajanand Krupa Society, F/120</li>
+              <li>Tarsali,Vadodara</li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Amidhara Borewell. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} TejasAI Software - All rights reserved.</p>
         </div>
       </div>
     </footer>
   )
-}
+} 
 
 export default Footer
 
