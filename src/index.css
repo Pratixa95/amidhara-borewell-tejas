@@ -666,3 +666,83 @@ canvas {
 
 
 
+/* ==================== MOBILE RESPONSIVENESS FIXES ==================== */
+@media (max-width: 768px) {
+
+  /* Reduce animations so mobile performance improves */
+  .water-wave-bg::before,
+  .water-bubbles,
+  .water-droplet,
+  .water-shimmer::before {
+    animation-duration: 12s !important;
+    opacity: 0.2 !important;
+  }
+
+  /* Reduce spacing */
+  body {
+    padding: 0 10px;
+  }
+
+  h1, .text-5xl, .products-title {
+    font-size: 22px !important;
+    line-height: 28px;
+    text-align: center;
+  }
+
+  h2, .product-info h2 {
+    font-size: 18px !important;
+  }
+
+  p, .desc, .specs p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* Product grid mobile */
+  .products-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .product-card {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .product-img img {
+    height: 160px !important;
+  }
+
+  .btn-quote {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  /* Turn off hover effects on mobile */
+  .gallery-item:hover,
+  .product-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Reduce bubble size */
+  .water-bubble {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  /* Logo spin on mobile – slower */
+  .spin-logo,
+  .spin-3d {
+    animation-duration: 7s !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h1, .products-title {
+    font-size: 20px !important;
+  }
+
+  .product-img img {
+    height: 140px !important;
+  }
+}

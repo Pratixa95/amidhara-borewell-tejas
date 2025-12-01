@@ -74,10 +74,7 @@ const Contact = () => {
       </div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Contact us for a free consultation and quote
-          </p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Amidhara Borewell – 24/7 Support in Vadodara</h1>
         </div>
         
         <div className="max-w-6xl mx-auto">
@@ -239,6 +236,13 @@ const Contact = () => {
             </div>
           </div>
         </div>
+      </div> <br /><br />
+      <div className='text-center'>
+        <p class="text-gray-700">
+        Have questions? Check our <a href="#faq" class="text-blue-600 font-semibold underline">FAQ Page</a> 
+        &nbsp;or explore our <a href="#services" class="text-blue-600 font-semibold underline">Services Section</a>.
+        </p>
+
       </div>
     </section>
   )

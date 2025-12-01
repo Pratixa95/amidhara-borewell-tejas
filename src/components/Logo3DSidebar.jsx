@@ -96,7 +96,7 @@ const Logo3DSidebar = () => {
         <div className="w-32 h-32 flex items-center justify-center">
           <img
             src={logo}
-            alt="Amidhara Borewell Logo"
+            alt="Amidhara Borewell drilling and water pump service in Vadodara"
             className="w-full h-full object-contain spin-3d"
           />
         </div>

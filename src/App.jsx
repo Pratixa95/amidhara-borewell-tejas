@@ -47,8 +47,8 @@ function App() {
       ) : (
         <>
           <Hero />
-          <Services />
-          <About />
+          <Services onNavigate={handleNavigation} />
+          <About onNavigate={handleNavigation} />
           <Product/>
           <FAQ/>
           <Contact />

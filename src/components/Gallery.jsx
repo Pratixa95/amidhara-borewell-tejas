@@ -210,7 +210,7 @@ const Gallery = () => {
           <div className="container mx-auto px-4 py-20">
             <div className="text-center mb-12">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-                Our Work Gallery
+                Our Recent Borewell Drilling & Pump Installation Works
               </h1>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Explore our professional borewell services through photos and videos
@@ -232,9 +232,18 @@ const Gallery = () => {
                 '/videos/galleryvideo3.mp4',
               ]}
             />
+        {/* <div className='text-center'>
+        <p class="text-gray-700 mt-4">
+        Looking for borewell experts? Explore our 
+        <a href="#services" class="text-blue-600 font-semibold underline">Professional Services</a> 
+        or <a href="#contact" class="text-blue-600 font-semibold underline">Book Your Service Now</a>.
+        </p>
+
+      </div> */}
           </div>
         </div>
       )}
+
     </section>
   )
 }

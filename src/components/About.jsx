@@ -1,7 +1,7 @@
 import React from 'react'
 import WaterEffects from './WaterEffects'
 
-const About = () => {
+const About = ({onNavigate}) => {
   return (
     <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden water-wave-bg water-surface">
       <WaterEffects variant="waves" />
@@ -14,10 +14,19 @@ const About = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">About Us</h2>
+            {/* <h2 className="text-4xl font-bold text-gray-900 mb-4">About Us</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Your trusted partner for reliable water solutions
-            </p>
+            </p> */}
+            {/* SEO added */}
+
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Expert Borewell Contractors With 18+ Years Experience
+          </h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Trusted Borewell Contractor in Vadodara, Gujarat for Reliable Water Solutions
+          </p>
+
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -99,6 +108,16 @@ const About = () => {
               </div>
             </div>
           </div>
+        </div> <br /><br />
+        <div className='text-center'>
+          <p className="text-gray-700 mt-6">
+          Learn more about our <a href="#services" className="text-blue-600 font-semibold underline">Services</a> 
+          &nbsp;or view completed borewell projects in our&nbsp;
+          <a onClick={() => onNavigate("gallery")} className="text-blue-600 font-semibold underline cursor-pointer">
+              Gallery
+            </a>
+          &nbsp;For pricing and consultation, <a href="#contact" className="text-blue-600 font-semibold underline">Contact Us Today</a>.
+          </p>
         </div>
       </div>
     </section>
@@ -106,4 +125,3 @@ const About = () => {
 }
 
 export default About
-

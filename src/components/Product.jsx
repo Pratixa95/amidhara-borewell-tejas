@@ -110,7 +110,7 @@ const Product = () => {
               data-aos-delay={index * 200}
             >
               <div className="product-img">
-                <img src={product.img} alt={product.name} />
+                <img src={product.img} alt="Amidhara Borewell drilling and water pump service in Vadodara"/>
               </div>
 
               <div className="product-info">

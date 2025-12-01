@@ -131,7 +131,8 @@ const Hero = () => {
   >
     <img
       src={logo}
-      alt="Amidhara Borewell Logo"
+      // SEO added
+      alt="Amidhara Borewell drilling and water pump service in Vadodara"
       className="w-full h-full object-contain spin-3d"
     />
   </div>
@@ -150,7 +151,9 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center md:text-left">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 relative" style={{ zIndex: 20 }}>
-            Professional Borewell Services
+            {/* SEO added */}
+            Professional Borewell & Pump Installation Services in Vadodara
+
           </h1>
           <p className="text-xl text-gray-700 mb-8 relative" style={{ zIndex: 20 }}>
             Your trusted partner for reliable water solutions. We provide expert borewell drilling, 
@@ -209,7 +212,33 @@ const Hero = () => {
           </div>
         </div>
       </div>
+         {/* // SEO added */}
+
+    {/* Local SEO Area Coverage Section */}
+<section className="mt-16 max-w-5xl mx-auto text-center">
+  <h2 className="text-3xl font-bold text-gray-900 mb-4">
+    Borewell Services Across Vadodara
+  </h2>
+  <p className="text-lg text-gray-700 leading-relaxed">
+    {/* Amidhara Borewell provides expert borewell drilling, pump installation,
+    submersible motor fitting, and water boring services across Vadodara,
+    Gujarat including Manjalpur, Makarpura, Karelibaug, Gotri, Atladara,
+    Sama, Waghodia Road, Ajwa Road, Alkapuri, Akota, Tarsali, Vasna, 
+    Ranoli, Padra & nearby areas. */}
+
+    <p class="text-lg text-gray-700 mt-6">
+    We provide expert <strong>borewell drilling and submersible pump services in Vadodara</strong>. 
+    Explore our complete list of solutions on our &nbsp;
+    <a href="#services" class="text-blue-600 font-semibold underline">Service </a> 
+    &nbsp;or <a href="#contact" class="text-blue-600 font-semibold underline">Contact</a> page for support.
+    </p>
+
+  </p>
+</section>
     </section>
+
+ 
+
   )
 }
 

@@ -54,7 +54,7 @@ const PhotoVideoGallery = ({ photos = [], videos = [] }) => {
                 <div className="aspect-video bg-gray-200 relative">
                   <img
                     src={photo}
-                    alt={`Borewell service ${index + 1}`}
+                    alt={`Amidhara Borewell drilling and water pump service in Vadodara ${index + 1}`}
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.target.src = 'https://via.placeholder.com/800x600?text=Borewell+Service'
@@ -138,7 +138,7 @@ const PhotoVideoGallery = ({ photos = [], videos = [] }) => {
             {mediaType === 'photo' ? (
               <img
                 src={selectedMedia}
-                alt="Full size"
+                alt="Amidhara Borewell drilling and water pump service in Vadodara"
                 className="w-full h-full object-contain rounded-lg modal-content"
               />
             ) : (

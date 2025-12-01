@@ -105,51 +105,51 @@ const Header = ({ onNavigate, currentPage = 'home' }) => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-2">
-            <button
-              onClick={() => scrollToSection('home')}
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection('services')}
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection('gallery')}
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
-            >
-              Gallery
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection('product')}
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
-            >
-              Product
-            </button>
-            <button
-              onClick={() => scrollToSection('faq')}
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
-            >
-              FAQ
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="block w-full text-left px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-            >
-              Contact Us
-            </button>
-          </div>
-        )}
+  <div className="md:hidden mt-4 pb-4 space-y-2">
+    <button
+      onClick={() => { scrollToSection('home'); setIsMenuOpen(false); }}
+      className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
+    >
+      Home
+    </button>
+    <button
+      onClick={() => { scrollToSection('services'); setIsMenuOpen(false); }}
+      className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
+    >
+      Services
+    </button>
+    <button
+      onClick={() => { scrollToSection('gallery'); setIsMenuOpen(false); }}
+      className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
+    >
+      Gallery
+    </button>
+    <button
+      onClick={() => { scrollToSection('about'); setIsMenuOpen(false); }}
+      className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
+    >
+      About
+    </button>
+    <button
+      onClick={() => { scrollToSection('product'); setIsMenuOpen(false); }}
+      className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
+    >
+      Product
+    </button>
+    <button
+      onClick={() => { scrollToSection('faq'); setIsMenuOpen(false); }}
+      className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
+    >
+      FAQ
+    </button>
+    <button
+      onClick={() => { scrollToSection('contact'); setIsMenuOpen(false); }}
+      className="block w-full text-left px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+    >
+      Contact Us
+    </button>
+  </div>
+)}
       </nav>
     </header>
   )

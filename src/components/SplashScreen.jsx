@@ -60,7 +60,7 @@ const SplashScreen = ({ onComplete }) => {
       <div className="absolute top-10 left-1/2 transform -translate-x-1/2 z-40">
         <img
           src={logo}
-          alt="Amidhara Borewell Logo"
+          alt="Amidhara Borewell drilling and water pump service in Vadodara"
           className="h-48 md:h-64 w-auto spin-logo"
         />
       </div>
@@ -96,7 +96,7 @@ const SplashScreen = ({ onComplete }) => {
       <div className="absolute top-10 left-1/2 transform -translate-x-1/2 z-10">
         <img
           src="/images/amidhara-logo.png"
-          alt="Fallback Logo"
+          alt="Amidhara Borewell drilling and water pump service in Vadodara"
           className="h-20 md:h-32 w-auto opacity-0"
         />
       </div>
