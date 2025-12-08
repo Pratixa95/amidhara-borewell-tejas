@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import pump05 from "/product.webp";
-import pump1 from "/product.webp";
-import pump15 from "/product.webp";
+import pump05 from "/product.jpg";
+import pump1 from "/product.jpg";
+import pump15 from "/product.jpg";
 import WaterEffects from "./WaterEffects";
 
 // PRODUCT LIST
